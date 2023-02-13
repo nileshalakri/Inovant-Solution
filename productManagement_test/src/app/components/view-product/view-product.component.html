@@ -1,0 +1,29 @@
+<div class="productWrapper" *ngFor="let item of data; let i=index">
+    <div class="imageWrapper">
+        <span *ngIf="item.images">
+            <img *ngFor="let img of item.images" [src]="img" width="200" height="200">
+       </span>
+        <span *ngIf="!item.images">
+            <img src="/assets/noImg.jpg" width="200" height="200" alt="Image is not available for this product">
+       </span>
+    </div>
+    <div class="infoWrapper">
+        <div class="price">
+          $ {{item.price}}
+        </div>
+        <div class="state">
+            <input type="checkbox"  id="state" name="state" [(ngModel)]="item.state">
+            <label *ngIf="item.state" class="stateLable" for="state">Active</label>
+            <label *ngIf="!item.state" class="stateLable" for="state">Inactive</label>
+        </div>
+        <div class="name">
+            <h1> {{item.name}}</h1>
+        </div>
+        <div class="sku">
+            <h6> {{item.SKU}}</h6>
+        </div>
+        <div class="description">
+            {{item.description}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    padding: 24px;
+    flex-direction: row;
+    justify-content: center;
+    
+    .listItem {
+        padding: 0 24px;
+        cursor: pointer;
+    }
+
+}

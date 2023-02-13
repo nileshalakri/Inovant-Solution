@@ -1,0 +1,62 @@
+<div class="formWrapper">
+    <form (ngSubmit)="addProduct(productForm)" [formGroup]="productForm" #form>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>Name</Label>
+            </div>
+            <div class="valueWrapper">
+                <input type="text" formControlName="name" id="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>Price</Label>
+            </div>
+            <div class="valueWrapper">
+                <input type="text" formControlName="price" id="price" placeholder="Price">
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>SKU</Label>
+            </div>
+            <div class="valueWrapper">
+                <input type="text" formControlName="SKU" id="SKU" placeholder="SKU">
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>description</Label>
+            </div>
+            <div class="valueWrapper">
+                <input type="text" formControlName="description" id="SKU" placeholder="description">
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>State</Label>
+            </div>
+            <div class="valueWrapper">
+                <input type="checkbox" formControlName="state" id="state" name="state">
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelWrapper">
+                <Label>Images</Label>
+            </div>
+            <div class="valueWrapper">
+                <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                multiple="" 
+                (change)="onFileChange($event)">
+            </div>
+            <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+        </div>
+        <div class="row">
+            <button type="submit">Add Product</button>
+        </div>
+    </form>
+</div>
